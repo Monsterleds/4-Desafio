@@ -1,0 +1,154 @@
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f2f2f2;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex: 1;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  background: #4A90E2;
+  width: max-content;
+  height: 64px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1;
+}
+
+nav .barra1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+nav .box1 {
+  display: flex;
+  flex-direction: row;
+  margin-left: 42px;
+}
+
+nav .box2 {
+  display: flex;
+  flex-direction: row;
+  align-content: flex-end;
+  font-size: 15px;
+  color: #fff;
+  margin: 0px 15px 0px 15px;
+  font-weight: bold;
+}
+
+nav .box3 {
+  display: flex;
+  flex-direction: row;
+  height: 30px;
+  margin-right: 42px;
+}
+
+.barraPerfil {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.FlexItems {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.PostItems {
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  height: 100%;
+  background-color: #fff;
+  flex: 1;
+  margin: 20px 0px 0px 0px;
+  border-radius: 7px;
+  flex-wrap: wrap;
+  box-shadow: 0px 0px 10px rgb(218, 218, 218);
+  padding-bottom: 20px;
+}
+
+img.ImgProfile {
+  display: flex;
+  flex-direction: row;
+  margin: 20px 10px 20px 30px;
+  width: 32px;
+  height: 32px;
+}
+
+.ProfileName {
+  display: flex;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+  color: #444444;
+}
+
+.TimeName {
+  display: flex;
+  margin: 0;
+  flex-basis: 100%;
+  font-size: 12px;
+  color: #9a9a9a;
+  margin-top: 2px;
+}
+
+.BoxUser {
+  margin-top: 20px;
+}
+
+.UserText {
+  display: flex;
+  flex-basis: 100%;
+  margin: 0px 20px 20px 30px;
+  font-size: 14px;
+}
+
+.BoxResposta {
+  display: flex;
+  flex-direction: row;
+  background-color: #EEEEEE;
+  border-radius: 20px;
+  margin: 20px 20px 0px 0px;
+  width: 88%;
+}
+
+hr{
+  border-color: rgb(240, 240, 240);
+  box-sizing:border-box;
+  width:100%;
+  margin: 0px 30px 0px 30px;
+}
+
+.ResponseName {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+  color: #444444;
+  width: 100%;
+}
+
+.ResponseText {
+  font-size: 13px;
+  line-height: 20px;
+  margin: 13px;
+}
+
+.BoxResponse {
+  display: flex;
+  margin: 0px;
+}

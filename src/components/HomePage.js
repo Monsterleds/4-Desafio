@@ -36,22 +36,22 @@ class HomePage extends Component {
           avatar: profile2
         },
         date: "04 Jun 2019",
-        content: "Fala galera, beleza? \n Estou fazendo o Bootcamp GoStack da Rocketseat e está sendo muito massa! Alguém mais ai fazendo, comenta na publicação para trocarmos uma ideia.",
+        content: " Fala galera, beleza? \n Estou fazendo o Bootcamp GoStack da Rocketseat e está sendo muito massa! Alguém mais ai fazendo, comenta na publicação para trocarmos uma ideia.",
         comments: [
           {
-            id: 3,
+            id: 1,
             author: {
               name: "Clara Lisboa",
               avatar: profile3
             },
-            content: "Também estou fazendo o Bootcamp e estou adorando! Estou no terceiro módulo sobre Node e já tenho minha API dos desafios construida!"
+            content: " Também estou fazendo o Bootcamp e estou adorando! Estou no terceiro módulo sobre Node e já tenho minha API dos desafios construida!"
           }, {
-            id: 4,
+            id: 2,
             author: {
               name: "Cézar Toledo",
               avatar: profile4
             },
-            content: "Que maaaaassa! Estou pensando em me inscrever na próxima turma pra ver qual é desse Bootcamp GoStack, dizem que os devs saem de lá com super poderes!"
+            content: " Que maaaaassa! Estou pensando em me inscrever na próxima turma pra ver qual é desse Bootcamp GoStack, dizem que os devs saem de lá com super poderes!"
           },
         ]
       },
@@ -73,65 +73,23 @@ class HomePage extends Component {
           </nav>
         </header>
         <div className="FlexItems">
-          <div className="PostItems">
-            <img className="ImgProfile" src={this.state.posts[0].author.avatar}/>
+          {this.state.posts.map(post => <div className="PostItems" key={post.id} data={post}>
+          <img className="ImgProfile" src={this.state.posts[post.id - 1].author.avatar}/>
             <div className="BoxUser">
-              <p className="ProfileName">{this.state.posts[0].author.name}</p>
-              <p className="TimeName">{this.state.posts[0].date}</p>
+              <p className="ProfileName">{this.state.posts[post.id - 1].author.name}</p>
+              <p className="TimeName">{this.state.posts[post.id - 1].date}</p>
             </div>
-            <p className="UserText">{this.state.posts[0].content}</p>
+            <p className="UserText">{this.state.posts[post.id - 1].content}</p>
             <hr noshade='noshade'/>
-            <div className="BoxResponse">
-              <img className="ImgProfile" src={this.state.posts[0].comments[0].author.avatar}/>
+            {this.state.posts[post.id - 1].comments.map(comment => <div className="BoxResponse" key={comment.id} data={comment}>
+            <img className="ImgProfile" src={this.state.posts[post.id - 1].comments[comment.id - 1].author.avatar}/>
               <div className="BoxResposta">
-                <p className="ResponseText"><a className="ResponseName">{this.state.posts[0].comments[0].author.name}</a>{this.state.posts[0].comments[0].content}</p>
+                <p className="ResponseText"><a className="ResponseName">{this.state.posts[post.id - 1].comments[comment.id - 1].author.name}</a>{this.state.posts[post.id - 1].comments[comment.id - 1].content}</p>
               </div>
             </div>
+            )}
           </div>
-
-          <div className="PostItems">
-            <img className="ImgProfile" src={this.state.posts[1].author.avatar}/>
-            <div className="BoxUser">
-              <p className="ProfileName">{this.state.posts[1].author.name}</p>
-              <p className="TimeName">{this.state.posts[1].date}</p>
-            </div>
-            <p className="UserText">{this.state.posts[1].content}</p>
-            <hr noshade='noshade'/>
-            <div className="BoxResponse">
-              <img className="ImgProfile" src={this.state.posts[1].comments[0].author.avatar}/>
-              <div className="BoxResposta">
-                <p className="ResponseText"><a className="ResponseName">{this.state.posts[1].comments[0].author.name}</a> {this.state.posts[1].comments[0].content}</p>
-              </div>
-            </div>
-            <div className="BoxResponse">
-              <img className="ImgProfile" src={this.state.posts[1].comments[1].author.avatar}/>
-              <div className="BoxResposta">
-                <p className="ResponseText"><a className="ResponseName">{this.state.posts[1].comments[1].author.name}</a> {this.state.posts[1].comments[1].content}</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="PostItems">
-            <img className="ImgProfile" src={this.state.posts[1].author.avatar}/>
-            <div className="BoxUser">
-              <p className="ProfileName">{this.state.posts[1].author.name}</p>
-              <p className="TimeName">{this.state.posts[1].date}</p>
-            </div>
-            <p className="UserText">{this.state.posts[1].content}</p>
-            <hr noshade='noshade'/>
-            <div className="BoxResponse">
-              <img className="ImgProfile" src={this.state.posts[1].comments[0].author.avatar}/>
-              <div className="BoxResposta">
-                <p className="ResponseText"><a className="ResponseName">{this.state.posts[1].comments[0].author.name}</a> {this.state.posts[1].comments[0].content}</p>
-              </div>
-            </div>
-            <div className="BoxResponse">
-              <img className="ImgProfile" src={this.state.posts[1].comments[1].author.avatar}/>
-              <div className="BoxResposta">
-                <p className="ResponseText"><a className="ResponseName">{this.state.posts[1].comments[1].author.name}</a> {this.state.posts[1].comments[1].content}</p>
-              </div>
-            </div>
-          </div>
+          )}    
         </div>
       </>
     );
